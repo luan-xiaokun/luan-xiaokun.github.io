@@ -18,7 +18,7 @@ email: "luanxiaokun@pku.edu.cn"
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
-theme: jekyll-theme-midnight
+theme: jekyll-theme-tactile
 
 rss: rss
 
