@@ -1,8 +1,8 @@
 ## beta-CROWN
 
-Arxiv链接：https://arxiv.org/abs/2103.06624
+Arxiv链接：<https://arxiv.org/abs/2103.06624>
 
-Github仓库：https://github.com/KaidiXu/Beta-CROWN
+Github仓库：<https://github.com/KaidiXu/Beta-CROWN>
 
 [CROWN](https://arxiv.org/abs/1811.00866)是神经网络验证方向比较有代表性的工作，大概是2018年发表的文章，后来在2020年有了[alpha-CROWN](https://arxiv.org/abs/2011.13824)，随后就是beta-CROWN. 这两部分工作分别提出了不完全的验证算法和完全的验证算法，并且都是可以GPU计算的，两个算法集成起来就是alpha-beta-CROWN，这个工具在[VNN-COMP 2021](https://sites.google.com/view/vnn2021)竞赛上获得了最高分，所以CROWN的这两个后续工作应该算是目前神经网络验证方面的SOTA了. 竞赛中分数较高的还有[VeriNet](https://github.com/vas-group-imperial/VeriNet), [oval](https://github.com/oval-group/oval-bab), [ERAN](https://github.com/eth-sri/eran)，其中只有VeriNet是CPU计算，其他都是GPU计算. 
 
@@ -20,23 +20,23 @@ beta-CROWN这篇文章提出一种新的bound propagation的验证方法，这�
 
 通过把BaB过程中引入的神经元状态约束加入到优化问题中，神经网络验证问题可以表达为以下形式
 
-![eq1](/home/luan/Desktop/Papers/beta-CROWN.assets/eq1.png)
+![eq1](https://luan-xiaokun.github.io/assets/images/beta-CROWN/beta-CROWN-eq1.png)
 
 利用类似CROWN的方法，将最后一层激活层用线性约束近似，验证问题转化为
 
-![eq2](/home/luan/Desktop/Papers/beta-CROWN.assets/eq2.png)
+![eq2](https://luan-xiaokun.github.io/assets/images/beta-CROWN/beta-CROWN-eq2.png)
 
 通过引入拉格朗日乘子beta，以及定义矩阵S（S表示哪些神经元状态不确定/激活/未激活），得到以下不等式
 
-![eq3](/home/luan/Desktop/Papers/beta-CROWN.assets/eq3.png)
+![eq3](https://luan-xiaokun.github.io/assets/images/beta-CROWN/beta-CROWN-eq3.png)
 
 第一个不等式是根据约束Z^{(L-1)}的拉格朗日乘子得到的，第二个不等式弱对偶性. 再将z^{(L-1)}展开，可以得到如下形式
 
-![eq4](/home/luan/Desktop/Papers/beta-CROWN.assets/eq4.png)
+![eq4](https://luan-xiaokun.github.io/assets/images/beta-CROWN/beta-CROWN-eq4.png)
 
 该式与第一个公式类似，记\hat{z}前面的矩阵为A^{i}，并且反复使用拉格朗日乘子，就可以将神经网络验证问题转化为如下形式
 
-![thm1](/home/luan/Desktop/Papers/beta-CROWN.assets/thm1.png)
+![thm1](https://luan-xiaokun.github.io/assets/images/beta-CROWN/beta-CROWN-thm1.png)
 
 文章中将这一过程用定理加以证明，风格与当年的CROWN十分类似
 
